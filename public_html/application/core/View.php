@@ -4,14 +4,15 @@
 namespace application\core;
 
 //Абстрактный Класс Controller
-abstract class Controller
+class View
 {
-    public $route;
+    public $path;
+    public $layout='default';
 
-    public function __construct($route)
+    public function __construct()
     {
-        //echo '<br>4) Абстрактный Класс <b>Controller</b> вызван<br>';
-        $this->route=$route;
+        echo '<br> Класс <b>View</b> вызван<br>';
+        //$this->route=$route;
     }
 
 }

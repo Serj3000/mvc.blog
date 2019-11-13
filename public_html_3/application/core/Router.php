@@ -65,7 +65,7 @@ class Router
                 if(method_exists($path,$action)){
                     echo '<br><br>3) Метод <b>'.$action.'</b> Класса '."<b>$path</b>".' был объявлен<br>';
                     //debug($path);
-                    $controller=new $path;
+                    $controller=new $path($this->params);
                     $controller->$action();
                 }else{
                     echo '<br><br>4) Не найден екшен: '."<b>$action</b>";

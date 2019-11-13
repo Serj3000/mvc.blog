@@ -6,9 +6,12 @@ namespace application\core;
 //Абстрактный Класс Controller
 abstract class Controller
 {
-    public function __construct()
+    public $route;
+
+    public function __construct($route)
     {
         echo '<br>4) Абстрактный Класс <b>Controller</b> вызван<br>';
+        $this->route=$route;
     }
 
 }

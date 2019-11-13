@@ -58,27 +58,27 @@ class Router
         if($this->math()){
         //Заносим переменную $path формируемый динамически класс. Функция ucfirst() делает заглавным первый символ аргумента
         $path='application\controllers\\'.ucfirst($this->params['controller']).'Controller';
-        echo '<br><br>1) Класс по роуту определен как: '."<b>$path</b>".'<br>';
+        //echo '<br><br>1) Класс по роуту определен как: '."<b>$path</b>".'<br>';
         //debug($path);
             if(class_exists($path)){
                     //include($path.'.php');
                    //trigger_error("Не удалось загрузить класс: $path", E_USER_WARNING);
-                echo '<br><br>2) Класс '."<b>$path</b>".' был объявлен<br>';
+                //echo '<br><br>2) Класс '."<b>$path</b>".' был объявлен<br>';
                 $action=$this->params['action'].'Action';
                 //var_dump($action);
                 if(method_exists($path,$action)){
-                    echo '<br><br>3) Метод <b>'.$action.'</b> Класса '."<b>$path</b>".' был объявлен<br>';
+                    //echo '<br><br>3) Метод <b>'.$action.'</b> Класса '."<b>$path</b>".' был объявлен<br>';
                     //debug($path);
-                    $controller=new $path;
+                    $controller=new $path($this->params);
                     $controller->$action();
                 }else{
-                    echo '<br><br>4) Не найден екшен: '."<b>$action</b>";
+                    echo '<br><br>Не найден екшен: '."<b>$action</b>";
                 }
             }else{
-                echo '<br><br>5) Не найден контроллер: '."<b>$path</b>";
+                echo '<br><br>Не найден контроллер: '."<b>$path</b>";
             }
         }else{
-            echo '<br><br>6) Маршрут не найден.<br>';
+            echo '<br><br>Маршрут не найден.<br>';
         }
     }
 

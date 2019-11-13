@@ -8,7 +8,8 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-        echo '<br>5) Главная страница: класс <b>MainController</b> метод <b>indexAction()</b>';
+        //echo '<br>5) Главная страница: класс <b>MainController</b> метод <b>indexAction()</b>';
+        echo '<br><b>Главная страница</b><br>';
     }
 
 }
