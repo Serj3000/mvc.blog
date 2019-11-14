@@ -19,7 +19,12 @@ class View
 
     public function render($title,$vars=[])
     {
-        require 'application/views/layouts'.$this->layout.'.php';
+        //ob_start — Включение буферизации вывода
+        ob_start();
+        require 'application/views/'.$this->path.'.php';
+        //ob_get_clean — Получить содержимое текущего буфера и удалить его
+        $content=ob_get_clean();
+        require 'application/views/layouts/'.$this->layout.'.php';
     }
 
 }
