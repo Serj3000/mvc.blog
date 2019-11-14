@@ -9,13 +9,13 @@ class AccountController extends Controller
     public function loginAction()
     {
         //echo '<br>5) Страница входа: класс <b>AccountController</b> метод <b>loginAction()</b>';
-        echo '<br><b>Страница входа</b><br>';
+        echo '<br><b>AccountController: Страница входа</b><br>';
     }
 
     public function registerAction()
     {
         //echo '<br>5) Страница регистрации: класс <b>AccountController</b> метод <b>registerAction()</b>';
-        echo '<br><b>Страница регистрации</b><br>';
+        echo '<br><b>AccountController: Страница регистрации</b><br>';
     }
 
 }
