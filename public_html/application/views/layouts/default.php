@@ -11,26 +11,20 @@
     <title><?php echo $title; ?></title>
   </head>
   <body>
-    <h2><?php echo $content; ?></h2>
 
+<div class="container">
+  <div class="row">
+    <div class="col-6">
 
+      <p>RRRRRRRRRRRRR</p>
 
+          <h2><?php echo $content; ?></h2>
 
+      <p>VVVVVVVVVVVVVV</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+  </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

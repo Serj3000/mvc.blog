@@ -10,12 +10,14 @@ class AccountController extends Controller
     {
         //echo '<br>5) Страница входа: класс <b>AccountController</b> метод <b>loginAction()</b>';
         echo '<br><b>AccountController: Страница входа</b><br>';
+        $this->view->render('Вход');
     }
 
     public function registerAction()
     {
         //echo '<br>5) Страница регистрации: класс <b>AccountController</b> метод <b>registerAction()</b>';
         echo '<br><b>AccountController: Страница регистрации</b><br>';
+        $this->view->render('Регистрация');
     }
 
 }
