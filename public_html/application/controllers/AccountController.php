@@ -17,6 +17,7 @@ class AccountController extends Controller
     {
         //echo '<br>5) Страница регистрации: класс <b>AccountController</b> метод <b>registerAction()</b>';
         echo '<br><b>AccountController: Страница регистрации</b><br>';
+        $this->view->layout='custom';
         $this->view->render('Регистрация');
     }
 
