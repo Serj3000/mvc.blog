@@ -12,7 +12,7 @@ use application\core\Router;
 use application\lib\Db;
 
 //Реализация метода автозагрузки классов
-
+require 'application/autoloader/autoloader.php';
 //Способ #1 Реализации метода автозагрузки-----
     // spl_autoload_register(function($class){
     //     $path=str_replace('\\','/',$class.'.php');
@@ -25,10 +25,10 @@ use application\lib\Db;
 
 
 //Способ #2 Реализации метода автозагрузки-----
-    function my_autoloader($class) {
-        include ''. $class . '.php';
-    }
-    spl_autoload_register('my_autoloader');
+    // function my_autoloader($class) {
+    //     include ''. $class . '.php';
+    // }
+    // spl_autoload_register('my_autoloader');
 //---------------------------------------------
 
 //Запускаем сессию

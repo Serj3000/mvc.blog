@@ -1,15 +1,4 @@
-﻿<?php
-
-//Подключения метода debug() из файла Dev.php
-require_once 'application/lib/Dev.php';
-// $arr=[1,2,3,4];
-// debug($arr);
-
-
-//Используем класс Router
-use application\core\Router;
-//Используем класс Db
-use application\lib\Db;
+<?php
 
 //Реализация метода автозагрузки классов
 
@@ -30,12 +19,3 @@ use application\lib\Db;
     }
     spl_autoload_register('my_autoloader');
 //---------------------------------------------
-
-//Запускаем сессию
-//session_start();
-
-
-$routing=new Router;
-$routing->run();
-
-//$routing=new Db;
