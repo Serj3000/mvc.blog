@@ -21,6 +21,8 @@ class View
     {
         //ob_start — Включение буферизации вывода
         ob_start();
+        //debug('application/views/'.$this->path.'.php');
+        //"application/views/main/index.php"
         require 'application/views/'.$this->path.'.php';
         //ob_get_clean — Получить содержимое текущего буфера и удалить его
         $content=ob_get_clean();

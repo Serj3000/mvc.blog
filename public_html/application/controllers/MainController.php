@@ -10,7 +10,7 @@ class MainController extends Controller
     {
         //echo '<br>5) Главная страница: класс <b>MainController</b> метод <b>indexAction()</b>';
         //echo '<br><b>MainController: Главная страница</b><br>';
-        $this->view->render('Главная страница');
+        $this->view->render('Главная страница dgdgfdgf');
     }
 
 }
