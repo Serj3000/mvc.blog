@@ -17,8 +17,10 @@ class View
     $this->path=$route['controller'].'/'.$route['action'];
     }
 
-    public function render($title,$vars=[])
+    public function render($title, $vars=[])
     {
+        //Импортируем переменные из массива $vars в текущую таблицу символов
+        extract($vars);
         if(file_exists('application/views/'.$this->path.'.php')) {
             //ob_start — Включение буферизации вывода
             ob_start();
@@ -31,6 +33,14 @@ class View
         }else{
             echo '<br>Вид <b>'.$this->path.'</b> не найден<br>';
         }
+    }
+
+    public static function errorCode($code)
+    {
+        //Получает или устанавливает код ответа HTTP
+        http_response_code($code);
+        require 'application/views/errors/'.$code.'.php';
+        exit;
     }
 
 }

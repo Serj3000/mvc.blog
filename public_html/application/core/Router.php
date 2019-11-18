@@ -3,6 +3,8 @@
 //Пространчво имен, определяющее расположение файла класса
 namespace application\core;
 
+use application\core\View;
+
 //Класс Router
 class Router
 {
@@ -73,12 +75,15 @@ class Router
                     $controller->$action();
                 }else{
                     echo '<br><br>Не найден екшен: '."<b>$action</b>";
+                    View::errorCode('404');
                 }
             }else{
                 echo '<br><br>Не найден контроллер: '."<b>$path</b>";
+                View::errorCode('404');
             }
         }else{
             echo '<br><br>Маршрут не найден.<br>';
+            View::errorCode('404');
         }
     }
 

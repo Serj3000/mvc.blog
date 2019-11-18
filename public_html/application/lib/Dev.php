@@ -1,8 +1,8 @@
-<html>
+<!-- <html>
     <form method="POST" action="http://mvc.blog">
         <button type="submit" class="btn btn-primary">Перейти на mvc.blog </button>
     </form>
-</html>
+</html> -->
 
 <?php
 
