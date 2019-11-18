@@ -21,7 +21,8 @@ class View
     {
         //Импортируем переменные из массива $vars в текущую таблицу символов
         extract($vars);
-        if(file_exists('application/views/'.$this->path.'.php')) {
+        $path='application/views/'.$this->path.'.php';
+        if(file_exists($path)) {
             //ob_start — Включение буферизации вывода
             ob_start();
             //debug('application/views/'.$this->path.'.php');
@@ -35,11 +36,24 @@ class View
         }
     }
 
+    public function redirect($url)
+    {
+        //Отправка HTTP-заголовка.
+        //Cпециальным видом заголовков является "Location:". В этом случае
+        //функция не только отправляет этот заголовок браузеру,
+        //но также возвращает ему код состояния REDIRECT (302)
+        header('location: '.$url);
+        exit;
+    }
+
     public static function errorCode($code)
     {
         //Получает или устанавливает код ответа HTTP
         http_response_code($code);
-        require 'application/views/errors/'.$code.'.php';
+        $path='application/views/errors/'.$code.'.php';
+        if(file_exists($path)){
+        require $path;
+        };
         exit;
     }
 

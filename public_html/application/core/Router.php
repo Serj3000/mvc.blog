@@ -83,7 +83,7 @@ class Router
             }
         }else{
             echo '<br><br>Маршрут не найден.<br>';
-            View::errorCode('404');
+            View::errorCode('604');
         }
     }
 
