@@ -38,4 +38,4 @@ use application\lib\Db;
 $routing=new Router;
 $routing->run();
 
-//$routing=new Db;
+$routing=new Db;
