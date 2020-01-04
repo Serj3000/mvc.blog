@@ -65,7 +65,9 @@ class Router
         //debug($this->params);
             $path='application\controllers\\'.ucfirst($this->params['controller']).'Controller';
             echo '<br>$path= '.$path.'<br>';
+            //Выражение include включает и выполняет указанный файл
             include($path . '.php');
+            //Проверяет, был ли объявлен класс
             if(class_exists($path)){
                 echo '<br>ОК<br>';
             }else{

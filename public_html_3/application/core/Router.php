@@ -56,12 +56,14 @@ class Router
         $path='application\controllers\\'.ucfirst($this->params['controller']).'Controller';
         echo '<br><br>1) Класс по роуту определен как: '."<b>$path</b>".'<br>';
         //debug($path);
+            //Проверяем был ли обявлен указанный класс
             if(class_exists($path)){
                     //include($path.'.php');
                    //trigger_error("Не удалось загрузить класс: $path", E_USER_WARNING);
                 echo '<br><br>2) Класс '."<b>$path</b>".' был объявлен<br>';
                 $action=$this->params['action'].'Action';
                 //var_dump($action);
+                //Проверяет, существует ли метод в данном классе
                 if(method_exists($path,$action)){
                     echo '<br><br>3) Метод <b>'.$action.'</b> Класса '."<b>$path</b>".' был объявлен<br>';
                     //debug($path);

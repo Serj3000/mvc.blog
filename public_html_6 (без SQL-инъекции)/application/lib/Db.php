@@ -15,8 +15,7 @@ class Db
     public function __construct(){
         $config= require 'application/config/db.php';
         $this->db = new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'], $config['user'], $config['pass']);
-        //debug($config);
-
+            //debug($config);
         // try {
         //     $this->db = new PDO('mysql:host='.$config['host'].';dbname='.$config['dbname'], $config['user'], $config['pass']);
         //     $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -25,27 +24,17 @@ class Db
         // }
     }
 
-    public function query($sql, $params=[]){
-        //PDO::prepare — Подготавливает запрос к выполнению и возвращает
-        //связанный с этим запросом объект
-        $stmt=$this->db->prepare($sql); //'SELECT FROM Users';
-        //Проверяем не является ли массив $params пустым
-        if(!empty($params)){
-            foreach($params as $key=>$val){
-                $stmt->bindValue(':'.$key, $val);
-                //$stmt->bindParam(':'.$key, $val);
-            }
-        }
+    public function query($sql){
+        $query=$this->db->query($sql);//'SELECT FROM Users';
         // $result=$query->fetchColumn();
         // debug($result);
-        $stmt->execute();
-        return $stmt;
+        return $query;
     }
 
-    public function row($sql, $params=[]){
+    public function row($sql){
         //PDO::query — Выполняет SQL-запрос и возвращает результирующий
         //набор в виде объекта PDOStatement
-        $result=$this->query($sql,$params);
+        $result=$this->query($sql);
         //fetchAll — Возвращает массив, содержащий все строки
         //результирующего набора 
         //
@@ -54,10 +43,10 @@ class Db
         return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function column($sql, $params=[]){
+    public function column($sql){
         //PDO::query — Выполняет SQL-запрос и возвращает результирующий
         //набор в виде объекта PDOStatement
-        $result=$this->query($sql,$params);
+        $result=$this->query($sql);
         //fetchColumn — Возвращает данные одного столбца следующей
         //строки результирующего набора
         return $result->fetchColumn();
