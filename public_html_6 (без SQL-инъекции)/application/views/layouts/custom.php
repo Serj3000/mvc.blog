@@ -16,11 +16,11 @@
     <div class="row">
         <div class="col-6">
 
-        <p>RRRRRRRRRRRRRR</p>
+        <p>----------RRRRRRRRRRRRRR---------</p>
 
             <h2><?php echo $content; ?></h2>
 
-        <p>VVVVVVVVVVVVVV</p>
+        <p>----------VVVVVVVVVVVVVV----------</p>
 
         </div>
     </div>

@@ -16,11 +16,13 @@
   <div class="row">
     <div class="col-6">
 
-      <p>RRRRRRRRRRRRR</p>
-
-          <h2><?php echo $content; ?></h2>
-
-      <p>VVVVVVVVVVVVVV</p>
+      <hr>
+      <h2>Базовый шаблон: view/layouts/default.php</h2><br>
+      <p><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<</p>
+      <hr>
+          <h3><?php echo $content; ?></h3>
+      <hr>
+      <p>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></p>
 
     </div>
   </div>

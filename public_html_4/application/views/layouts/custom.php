@@ -16,11 +16,13 @@
     <div class="row">
         <div class="col-6">
 
-        <p>RRRRRRRRRRRRRR</p>
-
+      <hr>
+      <h2>Castom шаблон: application/view/layouts/castom.php</h2><br>
+      <p>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
+      <hr><br>
             <h2><?php echo $content; ?></h2>
-
-        <p>VVVVVVVVVVVVVV</p>
+      <hr>
+      <p>vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</p>
 
         </div>
     </div>

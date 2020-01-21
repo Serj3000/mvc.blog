@@ -16,7 +16,7 @@ class MainController extends Controller
             'age'=>90,
         ];
 
-        $this->view->render('Главная страница MVC.Blog', $vars);
+        $this->view->render('Главная страница title', $vars);
     }
 
 }

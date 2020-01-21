@@ -4,3 +4,5 @@
 <p>Имя: <b><?php //echo $name; ?></b></p>
 <br>
 <p>Возвраст: <b><?php //echo $age; ?></b></p>
+<br>
+<?php debug($news_MainController);?>

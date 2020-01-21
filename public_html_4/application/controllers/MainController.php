@@ -8,9 +8,8 @@ class MainController extends Controller
 {
     public function indexAction()
     {
-        //echo '<br>5) Главная страница: класс <b>MainController</b> метод <b>indexAction()</b>';
-        //echo '<br><b>MainController: Главная страница</b><br>';
-        $this->view->render('Главная страница dgdgfdgf');
+        //echo '<br>Главная страница: класс MainController метод indexAction()';
+        //Обращение к методу render() класса View через свойство view наследуемого класса Controller
+        $this->view->render('Текст на вкладке title');
     }
-
 }

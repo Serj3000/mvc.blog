@@ -51,9 +51,9 @@ class View
         //Получает или устанавливает код ответа HTTP
         http_response_code($code);
         $path='application/views/errors/'.$code.'.php';
-        if(file_exists($path)){
-        require $path;
-        };
+            if(file_exists($path)){
+            require $path;
+            };
         exit;
     }
 

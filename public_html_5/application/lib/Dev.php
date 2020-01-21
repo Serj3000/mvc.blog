@@ -18,6 +18,12 @@ function debug($str)
     echo '<pre>________________________________________________________________';
     echo "<br><br>Привет. I am debuger. I live in '/application/lib/Dev.php'<br><br><br>";
     var_dump($str);
+    echo '<br><br>';
+    echo '<br>----------------------------------------------------------------';
+    echo '<br><br>';
+    print_r($str);
+    echo '<br><br>';
+    //echo $str;
     echo '<br></pre>_________________________________________________________';
-    exit;
+    //exit;
 }

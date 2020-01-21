@@ -44,8 +44,7 @@ use application\lib\Db;
 //Запускаем сессию
 //session_start();
 
-
 $routing=new Router;
 $routing->run();
 
-$routing=new Db;
+//$routing=new Db;

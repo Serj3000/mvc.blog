@@ -8,17 +8,18 @@ class AccountController extends Controller
 {
     public function loginAction()
     {
-        //echo '<br>5) Страница входа: класс <b>AccountController</b> метод <b>loginAction()</b>';
+        //Страница входа: класс AccountController  метод loginAction().
+        //Используется дефолтный (основной) шаблон представления default.php базовый.
         echo '<br><b>AccountController: Страница входа</b><br>';
         $this->view->render('Вход');
     }
 
     public function registerAction()
     {
-        //echo '<br>5) Страница регистрации: класс <b>AccountController</b> метод <b>registerAction()</b>';
+        //Страница регистрации: класс AccountController метод <b>registerAction()
         echo '<br><b>AccountController: Страница регистрации</b><br>';
+        // Используется castom (дополнительный) шаблон представления castom.php как базовый.
         $this->view->layout='custom';
         $this->view->render('Регистрация');
     }
-
 }

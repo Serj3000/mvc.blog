@@ -15,7 +15,6 @@ error_reporting(E_ALL);
 //Функция для которая будет принимать значения ошибок и выводить их через var_dump
 function debug($str)
 {
-
     //$url=trim($_SERVER['REQUEST_URI'],'/');
     $url=$_SERVER['REQUEST_URI'];
 
@@ -24,5 +23,8 @@ function debug($str)
     echo '<br>Путь: '.$url.'<br><br><br>';
     var_dump($str);
     echo '<br></pre>_________________________________________________________';
+    echo '<pre>';
+    //echo '<br>Путь: '.$this->route['controller'].'<br><br><br>';
+    echo '</pre>';
     exit;
 }
