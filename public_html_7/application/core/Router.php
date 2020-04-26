@@ -8,15 +8,22 @@ use application\core\View;
 //Класс Router
 class Router
 {
-    protected $routes=[];
-    protected $params=[];
+    protected $routes=[];   // ''=>[
+                            // 'controller'=>'main',
+                            // 'action'=>'index',]
+
+    protected $params=[];   // ['controller'=>'main',
+                            //  'action'=>'index'];
+
+
+
 
     public function __construct()
     {
         //echo '<br>я класс Router ...<br>';
         $arr=require 'application/config/routes.php';
         foreach ($arr as $key=>$val){
-            //debug($val);
+            //debug($val,__FILE__);
             $this->add($key, $val);
         }
     }
@@ -37,7 +44,7 @@ class Router
 
         //Удалим из url стоящий с переди слэш "/", с помощью функции trim()
         $url=trim($_SERVER['REQUEST_URI'],'/');
-        //debug($url);
+        //debug($url,__FILE__);
 
         //В цикле перебираем массив маршрутов
         foreach($this->routes as $route=>$params){
@@ -54,22 +61,25 @@ class Router
 
     public function run()
     {
-    //debug($this->routes);
+    //debug($this->routes,__FILE__);
         if($this->math()){
         //Заносим переменную $path формируемый динамически класс. Функция ucfirst() делает заглавным первый символ аргумента
         $path='application\controllers\\'.ucfirst($this->params['controller']).'Controller';
-        //echo '<br><br>1) Класс по роуту определен как: '."<b>$path</b>".'<br>';
-        //debug($path);
+                //echo '<br><br>1) Класс по роуту определен как: '."<b>$path</b>".'<br>';
+                //debug($path,__FILE__);
             if(class_exists($path)){
-                    //include($path.'.php');
-                   //trigger_error("Не удалось загрузить класс: $path", E_USER_WARNING);
-                //echo '<br><br>2) Класс '."<b>$path</b>".' был объявлен<br>';
+                        //include($path.'.php');
+                        //trigger_error("Не удалось загрузить класс: $path", E_USER_WARNING);
+                        //echo '<br><br>2) Класс '."<b>$path</b>".' был объявлен<br>';
                 $action=$this->params['action'].'Action';
-                //var_dump($action);
+                        //var_dump($action,__FILE__);
                 if(method_exists($path,$action)){
-                    //echo '<br><br>3) Метод <b>'.$action.'</b> Класса '."<b>$path</b>".' был объявлен<br>';
-                    //debug($path);
+                        //echo '<br><br>3) Метод <b>'.$action.'</b> Класса '."<b>$path</b>".' был объявлен<br>';
+                        //debug($this->params,__FILE__);
+
+                    //$controller=new application\controllers\MainController($this->params);
                     $controller=new $path($this->params);
+                    // $controller->$indexAction();
                     $controller->$action();
                 }else{
                     echo '<br><br>Не найден екшен: '."<b>$action</b>";

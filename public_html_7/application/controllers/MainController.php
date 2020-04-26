@@ -10,8 +10,8 @@ class MainController extends Controller
     public function indexAction()
     {
         $result=$this->model->getNews();
-        $var=[
-            'news_MainController'=>$result,
+        //debug($result,__FILE__);
+        $vars=['news_MainController'=>$result,
         ];
         //debug($result);
 
@@ -21,7 +21,7 @@ class MainController extends Controller
         //      ];
         // $data=$db->column('SELECT name FROM users WHERE id= :id',$params);
         
-        $this->view->render('Главная страница MVC.Blog',$var);
+        $this->view->render('Главная страница MVC.Blog',$vars);
     }
 
 }

@@ -8,6 +8,10 @@ class AccountController extends Controller
 {
     public function loginAction()
     {
+        if(!empty($_POST)){
+            exit(json_encode(['status'=>'success','message'=>123]));
+        }
+        
         //echo '<br>5) Страница входа: класс <b>AccountController</b> метод <b>loginAction()</b>';
         echo '<br><b>AccountController: Страница входа</b><br>';
         $this->view->render('Вход');

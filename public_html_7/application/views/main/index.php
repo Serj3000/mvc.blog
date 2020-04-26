@@ -1,8 +1,10 @@
 <p>Главная страница</p>
 <p>Шаблон находится: application/views/layouts/main/index.php</p>
 <br>
-<p>Имя: <b><?php //echo $name; ?></b></p>
+<?php foreach($news_MainController as $val): ?>
+<h3><?=$val['title']?></h3>
+<p><?=$val['description']?></p>
+<hr>
+<?php endforeach;?>
 <br>
-<p>Возвраст: <b><?php //echo $age; ?></b></p>
-<br>
-<?php debug($news_MainController);?>
+<?php //debug($news_MainController);?>

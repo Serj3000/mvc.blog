@@ -13,18 +13,17 @@ ini_set('display_errors',1);
 error_reporting(E_ALL);
 
 //Функция для которая будет принимать значения ошибок и выводить их через var_dump
-function debug($str)
+function debug($str,$param=__FILE__)
 {
     //$url=trim($_SERVER['REQUEST_URI'],'/');
     $url=$_SERVER['REQUEST_URI'];
 
     echo '<pre>________________________________________________________________';
-    echo "<br><br>Привет. I am debuger. I live in '/application/lib/Dev.php'<br><br><br>";
-    echo '<br>Путь: '.$url.'<br><br><br>';
-    var_dump($str);
-    echo '<br></pre>_________________________________________________________';
+    echo "<br><br>Привет. I am debuger. I live in <br>".__FILE__."<br><br><br>";
+    echo '<br>Файл: '.$param.'<br><br><br>';
+    echo '<br></pre>';
     echo '<pre>';
-    //echo '<br>Путь: '.$this->route['controller'].'<br><br><br>';
-    echo '</pre>';
+    print_r($str);
+    echo '<br></pre>_________________________________________________________';
     exit;
 }

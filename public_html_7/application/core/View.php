@@ -6,14 +6,21 @@ namespace application\core;
 // Класс View
 class View
 {
-    public $path;
-    public $route;
+    public $path;   //  main/index
+
+    public $route;  // $route=['controller'=>'main',
+                    //         'action'=>'index'];
+
     public $layout='default';
+
+
+
 
     public function __construct($route)
 {
     //echo '<br>Класс <b>View</b> вызван<br>';
     $this->route=$route;
+    //debug($this->route,__FILE__);
     $this->path=$route['controller'].'/'.$route['action'];
     }
 
@@ -25,7 +32,7 @@ class View
         if(file_exists($path)) {
             //ob_start — Включение буферизации вывода
             ob_start();
-            //debug('application/views/'.$this->path.'.php');
+            //debug('application/views/'.$this->path.'.php',__FILE__);
             //"application/views/main/index.php"
             require 'application/views/'.$this->path.'.php';
             //ob_get_clean — Получить содержимое текущего буфера и удалить его

@@ -6,8 +6,8 @@ namespace application\core;
 // Класс View
 class View
 {
-    public $path;
-    public $route;
+    public $path=[];
+    public $route=[];
     public $layout='default';
 
     public function __construct($route)
