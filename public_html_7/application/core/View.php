@@ -28,6 +28,7 @@ class View
     {
         //Импортируем переменные из массива $vars в текущую таблицу символов
         extract($vars);
+        debug($vars,__FILE__);
         $path='application/views/'.$this->path.'.php';
         if(file_exists($path)) {
             //ob_start — Включение буферизации вывода
@@ -62,6 +63,14 @@ class View
         require $path;
         };
         exit;
+    }
+
+    public function message($status, $message){
+        exit(json_encode(['status'=>$status,'message'=>$message]));
+    }
+
+    public function location($url){
+        exit(json_encode(['url'=>$url]));
     }
 
 }
