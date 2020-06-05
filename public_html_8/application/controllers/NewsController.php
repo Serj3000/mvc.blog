@@ -3,15 +3,17 @@
 namespace application\controllers;
 
 use application\core\Controller;
-use application\lib\Db;
 
-class MainController extends Controller
+class NewsController extends Controller
 {
-    public function indexAction()
+    public function showAction()
     {
+        //echo '<br>5) Страница новостей: класс <b>NewController</b> метод <b>showAction()</b>';
+        echo '<br><b>NewsController: Страница новостей</b><br>';
+
         $result=$this->model->getNews();
         //debug($result,__FILE__);
-        $vars=['news_MainController'=>$result];
+        $vars=['news_NewsController'=>$result];
         //debug($result);
 
         // $db=new Db;

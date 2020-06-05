@@ -15,7 +15,9 @@ class AccountController extends Controller
         
         //echo '<br>5) Страница входа: класс <b>AccountController</b> метод <b>loginAction()</b>';
         echo '<br><b>AccountController: Страница входа</b><br>';
-        $this->view->render('Вход');
+        $result=$this->model->loginUser();
+        $vars=['login_AccountController'=>$result];
+        $this->view->render('Вход',$vars);
     }
 
     public function registerAction(){

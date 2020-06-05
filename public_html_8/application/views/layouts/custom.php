@@ -9,28 +9,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title><?php echo $title; ?></title>
-
-    <script scr="/public/scripts/form.js"></script>
-    <script scr="/public/scripts/jquery-3.5.0.min.js"></script>
-    <script scr="/public/scripts/jquery.js"></script>
   </head>
   <body>
 
-  <div class="container">
+    <div class="container" style="background: grey">
     <div class="row">
-      <div class="col-6">
+        <div class="col-6">
 
-        <hr>
-        <h2>Базовый шаблон: view/layouts/default.php</h2><br>
-        <p><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<</p>
-        <hr>
-            <h3><?php echo $content; ?></h3>
-        <hr>
-        <p>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>></p>
+        <p>----------RRRRRRRRRRRRRR---------</p>
 
-      </div>
+            <h2><?php echo $content; ?></h2>
+
+        <p>----------VVVVVVVVVVVVVV----------</p>
+
+        </div>
     </div>
-  </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

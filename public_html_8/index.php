@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 //Подключения метода debug() из файла Dev.php
 require_once 'application/lib/Dev.php';
@@ -42,7 +42,7 @@ use application\lib\Db;
 //---------------------------------------------
 
 //Запускаем сессию
-//session_start();
+session_start();
 
 $routing=new Router;
 $routing->run();
